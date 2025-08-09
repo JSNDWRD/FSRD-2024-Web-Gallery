@@ -24,7 +24,6 @@ export async function GET() {
 
     return NextResponse.json(files, { status: 200 });
   } catch (error) {
-    console.error(error);
     return NextResponse.json(
       { error: `Failed to fetch objects: ${(error as Error).message}` },
       { status: 500 }
