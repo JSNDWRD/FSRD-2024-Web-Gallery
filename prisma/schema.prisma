@@ -13,3 +13,31 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Event {
+  id        String    @id @default(uuid())
+  title     String
+  date      DateTime
+  location  String?
+  coverUrl  String?
+  artworks  Artwork[]
+  createdAt DateTime @default(now())
+}
+
+model Artwork {
+  id        String   @id @default(uuid())
+  title     String
+  imageUrl  String
+  description String?
+  artistName  String
+  event      Event   @relation(fields: [eventId], references: [id])
+  eventId    String
+  createdAt  DateTime @default(now())
+}
+
+model Comment {
+  id String @id @default(uuid())
+  name String
+  content String
+  createdAt DateTime @default(now())
+}
