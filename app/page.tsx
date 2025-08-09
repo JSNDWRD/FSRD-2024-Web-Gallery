@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/api/r2-storage");
+      const res = await fetch("/api/r2-storage");
       const data = await res.json();
       console.log(data);
       setImages(data);
