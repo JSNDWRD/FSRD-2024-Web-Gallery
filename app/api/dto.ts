@@ -13,6 +13,7 @@ export type GetEventCommentsRequestDto = {
 export type GetEventCommentResponseDto = {
   id: string;
   name: string;
+  eventName: string;
   content: string;
   createdAt: Date;
 }[];

@@ -1,53 +1,23 @@
 import prisma from "@/lib/prisma";
-import { NextRequest, NextResponse } from "next/server";
-import { GetEventCommentResponseDto, PostCommentResponseDto } from "../dto";
+import { NextResponse } from "next/server";
 
-// Get comments for specific event
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const eventId = searchParams.get("eventId") || "";
-
+export async function GET() {
   try {
-    const data = await prisma.comment.findMany({ where: { eventId: eventId } });
-    const formatted: GetEventCommentResponseDto = data.map((e) => ({
-      id: e.id,
+    const data = await prisma.comment.findMany({
+      include: { event: { select: { title: true } } },
+    });
+    const formatted = data.map((e) => ({
       name: e.name,
-      content: e.content,
+      id: e.id,
       createdAt: e.createdAt,
+      eventId: e.eventId,
+      content: e.content,
+      eventName: e.event.title,
     }));
     return NextResponse.json(formatted, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: `Failed to fetch comments: ${(error as Error).message}` },
-      { status: 500 }
-    );
-  }
-}
-
-// Post a comment for specific
-export async function POST(req: NextRequest) {
-  const body = await req.json();
-  const { eventId, name, content } = body;
-  try {
-    const comment = await prisma.comment.create({
-      data: {
-        eventId: eventId,
-        name: name,
-        content: content,
-      },
-    });
-
-    const formatted: PostCommentResponseDto = {
-      success: true,
-      name: name,
-      content: content,
-      createdAt: comment.createdAt,
-    };
-
-    return NextResponse.json(formatted, { status: 201 });
-  } catch (error) {
-    return NextResponse.json(
-      { error: `Failed to post comment: ${(error as Error).message}` },
       { status: 500 }
     );
   }
