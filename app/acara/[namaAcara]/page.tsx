@@ -3,7 +3,7 @@ import { useEventsStore } from "@/utils/useEventsStore";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
 
-export default function page() {
+export default function Page() {
   const { namaAcara } = useParams();
 
   const {
@@ -22,7 +22,7 @@ export default function page() {
     }
     searchEvents(namaAcara?.toString() || "");
     searchComments(namaAcara?.toString() || "");
-  }, [searchEvents, searchComments]);
+  }, [searchEvents, searchComments, events.length, fetchEvents, namaAcara]);
 
   if (loading) {
     return <div>Loading..</div>;
