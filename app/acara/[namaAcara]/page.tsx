@@ -32,13 +32,17 @@ export default function Page() {
     (e) => e.title.toLowerCase() == namaAcara?.toString().toLowerCase()
   );
 
+  const event = events.find((e) => e.title === namaAcara)
+
   if (!validateEvent) {
     return <div>404</div>;
   }
 
   return (
-    <div>
-      <h1 className="mb-4 mt-2 text-2xl font-semibold">Link image acaranya</h1>
+    <section>
+      <div className="h-36"></div>
+      <h1 className="mb-4 text-7xl font-semibold text-center font-playfair text-[#FEECD4]">{namaAcara}</h1>
+      <h1 className="mb-4 text-6xl font-semibold text-center font-playfair text-[#FEECD4]">{new Date(event?.date || 'titit').toLocaleDateString()}</h1>
       {eventImages.map((e) => (
         <h2 key={e.key}>{e.key}</h2>
       ))}
@@ -52,6 +56,6 @@ export default function Page() {
           </h2>
         );
       })}
-    </div>
+    </section>
   );
 }

@@ -103,6 +103,5 @@ export const useEventsStore = create<EventsState>((set, get) => ({
       set({ loading: false });
     }
   },
-
   clearCache: () => set({ events: [], images: [], eventImages: [] }),
 }));
