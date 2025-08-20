@@ -16,10 +16,10 @@ export default function HomeFooter() {
       </div>
       <div className="relative z-30 flex flex-col justify-center items-center p-6 gap-8 h-full w-full">
         <div className="flex gap-6 items-center justify-between">
-          <p>Sosmed 1</p>
-          <p>Sosmed 2</p>
+          <p>@Sosmed 1</p>
+          <p>@Sosmed 2</p>
         </div>
-        <p className="text-center">
+        <p className="text-center text-xl"> 
           &copy; Antarasta FSRD ITB 2025. All rights reserved.
         </p>
       </div>

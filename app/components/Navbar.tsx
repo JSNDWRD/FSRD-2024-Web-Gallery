@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav className="flex items-center bg-navbar min-h-14 md:min-h-24 z-30 absolute top-0 w-full font-playfair">
-      <ul className="inline-flex gap-6 text-[#002492] font-medium ml-14 md:ml-32 lg:ml-40 text-lg md:text-2xl lg:text-3xl">
+      <ul className="inline-flex gap-10 text-[#002492] ml-14 md:ml-32 lg:ml-40 text-lg md:text-2xl lg:text-4xl font-bold">
         <li>
           <Link href={"/"}>Utama</Link>
         </li>

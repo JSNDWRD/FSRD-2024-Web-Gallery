@@ -27,14 +27,14 @@ export default function Acaras() {
   }, [events.length, fetchEvents]);
 
   return (
-    <div className="mt-96">
+    <div className="mt-32">
       <div className="px-4">
         <Image
           src={LogoLokasharana}
           alt="Lokasharana"
-          className="w-48 md:w-64 lg:w-96 mx-auto"
+          className="w-48 md:w-64 lg:w-lg mx-auto"
         />
-        <p className="max-w-lg text-center mx-auto mt-8 font-sans">
+        <p className="max-w-2xl text-center mx-auto mt-8 text-2xl font-sans">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
           eveniet, non laudantium aperiam sed nisi dignissimos optio architecto
           voluptatibus.

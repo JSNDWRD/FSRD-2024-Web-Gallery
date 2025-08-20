@@ -22,11 +22,11 @@ export default function Home() {
   }, [fetchEvents, fetchImages, fetchComments]);
 
   return (
-    <div className="flex flex-col min-h-[200vh] relative">
+    <main className="flex flex-col min-h-screen relative">
       <Navbar />
       <Jumbotron />
       <Acaras />
       <HomeFooter />
-    </div>
+    </main>
   );
 }

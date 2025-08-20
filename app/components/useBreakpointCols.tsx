@@ -8,7 +8,7 @@ export function useBreakpointCols() {
       if (window.innerWidth < 640) setCols(2); // base
       else if (window.innerWidth < 768) setCols(3); // sm
       else if (window.innerWidth < 1024) setCols(3); // md
-      else setCols(3); // lg+
+      else setCols(4); // lg+
     }
 
     updateCols();
