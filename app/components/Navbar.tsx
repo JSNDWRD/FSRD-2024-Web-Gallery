@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center bg-navbar min-h-14 md:min-h-24">
-      <ul className="inline-flex gap-6 ml-18 md:ml-36 lg:ml-48 text-xl md:text-2xl lg:text-3xl">
+    <nav className="flex items-center bg-navbar min-h-14 md:min-h-24 z-30 absolute top-0 w-full font-playfair">
+      <ul className="inline-flex gap-6 text-[#002492] font-medium ml-14 md:ml-32 lg:ml-40 text-lg md:text-2xl lg:text-3xl">
         <li>
           <Link href={"/"}>Utama</Link>
         </li>
@@ -16,7 +16,7 @@ export default function Navbar() {
       <Image
         alt="Flower"
         src={navbarFlower}
-        className="w-20 md:w-36 lg:w-48 absolute left-0 top-0 h-auto"
+        className="w-14 md:w-28 lg:w-40 absolute left-0 top-0 h-auto"
       />
     </nav>
   );

@@ -30,3 +30,12 @@ export type PostCommentResponseDto = {
   content: string;
   createdAt: Date;
 };
+
+export type Event = {
+  id: string;
+  title: string;
+  date: Date | string;
+  location?: string | undefined;
+  coverUrl?: string | undefined;
+  createdAt: string;
+};
