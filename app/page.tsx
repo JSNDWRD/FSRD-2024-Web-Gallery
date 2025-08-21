@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useEventsStore } from "@/utils/useEventsStore";
-import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Acaras from "./components/Acaras";
 import HomeFooter from "./components/HomeFooter";

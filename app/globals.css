@@ -26,8 +26,13 @@ body {
 }
 
 .bg-jumbotron {
-  background-image: url("../public/jumbotron_desktop.png");
+  background-image: url("../public/jumbotron_mobile.png");
   @apply bg-bottom-left bg-no-repeat bg-cover;
+}
+
+.bg-comment {
+  background-image: url("../public/comment_mobile.png");
+  @apply bg-top-left bg-no-repeat bg-cover;
 }
 
 @media (min-width: 768px) {
@@ -39,7 +44,8 @@ body {
   }
   .bg-jumbotron {
     background-image: url("../public/jumbotron_desktop.png");
-    @apply bg-cover;
-
+  }
+  .bg-comment {
+    background-image: url("../public/comment_desktop.png");
   }
 }

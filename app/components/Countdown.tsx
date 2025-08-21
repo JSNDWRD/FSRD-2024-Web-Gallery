@@ -6,6 +6,8 @@ export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());
 
   useEffect(() => {
+    setTimeLeft(targetDate - Date.now());
+
     const interval = setInterval(() => {
       setTimeLeft(targetDate - Date.now());
     }, 1000);
@@ -33,33 +35,35 @@ export default function Countdown() {
     <div className="flex flex-col items-center font-playfair gap-6 w-fit">
       <div className="flex gap-4">
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">{days}</span>
-          <span className="text-lg mt-4">hari</span>
+          <span className="text-4xl md:text-6xl lg:text-8xl">{days}</span>
+          <span className="text-md md:text-lg mt-4">hari</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">:</span>
+          <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">{hours.toString().padStart(2, "0")}</span>
-          <span className="text-lg mt-4">jam</span>
+          <span className="text-4xl md:text-6xl lg:text-8xl">
+            {hours.toString().padStart(2, "0")}
+          </span>
+          <span className="text-md md:text-lg mt-4">jam</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">:</span>
+          <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">
+          <span className="text-4xl md:text-6xl lg:text-8xl">
             {minutes.toString().padStart(2, "0")}
           </span>
-          <span className="text-lg mt-4">menit</span>
+          <span className="text-md md:text-lg mt-4">menit</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">:</span>
+          <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-6xl lg:text-8xl">
+          <span className="text-4xl md:text-6xl lg:text-8xl">
             {seconds.toString().padStart(2, "0")}
           </span>
-          <span className="text-lg mt-4">detik</span>
+          <span className="text-md md:text-lg mt-4">detik</span>
         </div>
       </div>
     </div>

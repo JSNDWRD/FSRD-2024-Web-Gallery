@@ -18,7 +18,7 @@ export default function Card(props: {
           year: "numeric",
         }).format(new Date(date))}
       </p>
-      <div className="lg:w-96 lg:h-64 md:w-48 md:h-64 w-36 h-48 relative text-black flex items-end">
+      <div className="xl:w-96 lg:w-72 lg:h-64 md:w-48 md:h-64 w-36 h-48 relative text-black flex items-end">
         <Image
           src={coverUrl}
           className="rounded-2xl z-0 object-cover"
