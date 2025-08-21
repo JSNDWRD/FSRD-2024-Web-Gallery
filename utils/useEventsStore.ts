@@ -1,6 +1,5 @@
 import { GetEventCommentResponseDto, GetImageResponseDto } from "@/app/api/dto";
 import { create } from "zustand";
-
 interface Event {
   id: string;
   title: string;
@@ -22,6 +21,12 @@ interface EventsState {
   fetchEvents: () => Promise<void>;
   fetchImages: () => Promise<void>;
   fetchComments: () => Promise<void>;
+  postComment: (
+    name: string,
+    content: string,
+    eventId: string,
+    eventName: string
+  ) => Promise<void>;
   clearCache: () => void;
 }
 
@@ -74,7 +79,7 @@ export const useEventsStore = create<EventsState>((set, get) => ({
     }
   },
   searchComments: async (eventName: string) => {
-    set({ loading: true, eventComments: [] });
+    // Preserve existing comments during search to avoid UI flicker
     try {
       if (get().comments.length === 0) {
         await get().fetchComments();
@@ -85,22 +90,45 @@ export const useEventsStore = create<EventsState>((set, get) => ({
         comment.eventName.toLowerCase().startsWith(eventName.toLowerCase())
       );
 
-      set({ eventComments: filtered, loading: false });
+      set({ eventComments: filtered });
     } catch (error) {
       console.error("Error fetching event comments:", error);
-      set({ loading: false });
     }
   },
   fetchComments: async () => {
-    set({ loading: true });
     try {
-      const res = await fetch(`/api/comments/`);
+      const res = await fetch(`/api/comments`);
       const data = await res.json();
       console.log(data);
-      set({ comments: data, loading: false });
+      set({ comments: data });
     } catch (error) {
       console.error("Error fetching comments:", error);
-      set({ loading: false });
+    }
+  },
+  postComment: async (
+    name: string,
+    content: string,
+    eventId: string,
+    eventName: string
+  ) => {
+    try {
+      const response = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify({
+          name: name,
+          content: content,
+          eventId: eventId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to post comment");
+      }
+
+      await get().fetchComments();
+      await get().searchComments(eventName);
+    } catch (error) {
+      console.error("Error posting comment:", error);
     }
   },
   clearCache: () => set({ events: [], images: [], eventImages: [] }),

@@ -20,7 +20,7 @@ export default function Page() {
   const {
     eventImages,
     searchEvents,
-    // eventComments,
+    eventComments,
     searchComments,
     events,
     fetchEvents,
@@ -122,8 +122,23 @@ export default function Page() {
           <h1 className="mt-16 mb-32 text-4xl md:text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
             Komentar
           </h1>
-          <div className="px-6 lg:px-24 mb-6 grid grid-cols-1 *:justify-self-center md:grid-cols-2 lg:grid-cols-3">
-            <Comment type="POST" />
+          <div className="px-6 lg:px-24 mb-6 grid grid-cols-1 *:justify-self-center md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-fit mx-auto">
+            <Comment
+              eventName={event?.title || ""}
+              eventId={event?.id || ""}
+              type="POST"
+            />
+            {eventComments.map((comment, i) => (
+              <Comment
+                eventName={event?.title || ""}
+                eventId={event?.id || ""}
+                key={i}
+                type="GET"
+                name={comment.name}
+                date={comment.createdAt}
+                content={comment.content}
+              />
+            ))}
           </div>
           <footer className="text-center text-xl py-4">
             &copy; Antarasta FSRD ITB 2025. All rights reserved.

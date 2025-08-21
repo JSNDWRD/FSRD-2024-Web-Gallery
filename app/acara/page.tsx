@@ -2,6 +2,7 @@
 import { useEventsStore } from "@/utils/useEventsStore";
 import { useEffect } from "react";
 import Card from "../components/Card";
+import HomeFooter from "../components/HomeFooter";
 
 export default function Page() {
   const { events, fetchEvents } = useEventsStore();
@@ -16,7 +17,7 @@ export default function Page() {
         Semua Acara
       </h1>
       {events.length === 0 && <p>No Events</p>}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24 mx-auto *:justify-self-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24 mx-auto *:justify-self-center mb-16">
         {events.map((e, i) => (
           <Card
             key={i}
@@ -26,6 +27,7 @@ export default function Page() {
           />
         ))}
       </div>
+      <HomeFooter />
     </div>
   );
 }
