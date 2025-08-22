@@ -2,6 +2,7 @@ import { Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { titleToSlug } from "@/utils/slugUtils";
+import { rangedEvents } from "@/lib/data";
 
 export default function Card(props: {
   title: string;
@@ -14,11 +15,12 @@ export default function Card(props: {
   return (
     <div className={`${className}`}>
       <p className="text-center mb-2 font-sans text-md md:text-xl">
-        {new Intl.DateTimeFormat("en-GB", {
-          day: "2-digit",
-          month: "long",
-          year: "numeric",
-        }).format(new Date(date))}
+        {rangedEvents[title as keyof typeof rangedEvents] ||
+          new Date(date).toLocaleDateString("id-ID", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
       </p>
       <div className="xl:w-96 lg:w-72 lg:h-64 md:w-48 md:h-64 w-36  h-48 relative text-black flex items-end hover:-translate-y-2 hover:cursor-pointer transition-all duration-200">
         <Image

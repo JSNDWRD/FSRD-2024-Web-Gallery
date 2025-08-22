@@ -17,6 +17,7 @@ import Comment from "@/app/components/Comment";
 import NotFound from "@/app/components/NotFound";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { rangedEvents } from "@/lib/data";
 
 export default function Page() {
   useEffect(() => {
@@ -145,13 +146,13 @@ export default function Page() {
         <h1 className="mb-4 text-4xl md:text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
           {event.title}
         </h1>
-        <h2 className="mb-4 text-2xl md:text-5xl text-center font-playfair text-[#FEECD4]">
-          {new Date(event.date).toLocaleDateString("id-ID", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+        <h2 className="mb-16 text-2xl md:text-5xl text-center font-playfair text-[#FEECD4]">
+          {rangedEvents[event.title as keyof typeof rangedEvents] ||
+            new Date(event.date).toLocaleDateString("id-ID", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
         </h2>
           {eventImages.length > 0 ? (
             <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4 md:px-6 lg:px-24">
