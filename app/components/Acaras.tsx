@@ -8,6 +8,7 @@ import VinesRight from "@/public/vines_right.svg";
 import { Event } from "../api/dto";
 import { useBreakpointCols } from "./useBreakpointCols";
 import Card from "./Card";
+import LeftVines from "@/public/home_vines.svg";
 
 export default function Acaras() {
   const { events, fetchEvents, loading } = useEventsStore();
@@ -33,6 +34,12 @@ export default function Acaras() {
         src={VinesRight}
         alt="vines"
         className="absolute z-0 top-80 right-0 w-32 md:w-48 lg:w-64 object-contain"
+        unselectable="on"
+      />
+      <Image 
+        className="absolute z-0 left-0 top-64 md:top-48 lg:top-64 w-32 md:w-48 xl:w-64 object-contain"
+        src={LeftVines}
+        alt="vines"
         unselectable="on"
       />
       <div className="px-4">

@@ -8,23 +8,18 @@ import flowPinkRight from "@/public/flowpink_right.png";
 import rockRight from "@/public/rock_right.png";
 import bugCenter from "@/public/bugs_center.png";
 import Link from "next/link";
-import Vines from "@/public/home_vines.svg"
+import LeftVines from "@/public/home_vines.svg"
 
 import { Play } from "lucide-react";
 
 export default function Jumbotron() {
   return (
-    <div className="bg-jumbotron relative pt-24  w-full max-xl:items-center *:text-center flex xl:flex-row flex-col xl:*:flex-1 gap-4 min-h-96 py-8 xl:py-32">
+    <div className="bg-jumbotron relative pt-24 w-full flex flex-col xl:flex-row items-center justify-center gap-8 min-h-96 py-8 xl:py-32">
+      {/* Decorative Images */}
       <Image
         className="absolute z-0 -left-4 bottom-0 w-36 lg:w-64 object-contain"
         src={flowPinkLeft}
         alt="flow"
-        unselectable="on"
-      />
-      <Image 
-        className="absolute z-0 left-0 w-48 md:w-64 lg:w-64 object-contain"
-        src={Vines}
-        alt="vines"
         unselectable="on"
       />
       <Image
@@ -40,19 +35,20 @@ export default function Jumbotron() {
         unselectable="on"
       />
       <Image
-        className="absolute z-0 max-lg:left-1/2 max-lg:-translate-x-1/2 left-1/4 -bottom-18 w-36 object-contain"
+        className="absolute z-0 max-lg:left-1/2 max-lg:-translate-x-1/2 left-1/4 -bottom-24 w-48 object-contain"
         src={bugCenter}
         alt="fly"
         unselectable="on"
       />
-      <div className="flex items-center z-30 justify-around pt-8 lg:mt-12 md:pl-20 w-full">
-        <div className="flex gap-4 md:gap-4">
+      
+      <div className="flex flex-col mt-4 xl:flex-row flex-1 w-full items-center xl:justify-center z-30 gap-8 xl:gap-16 font-sans text-center xl:text-left">
+        <div className="flex gap-4 md:gap-4 items-center justify-center">
           <Image
             src={LogoAntarasta}
             alt="Antarasta"
-            className="w-36 md:w-64 lg:w-72 object-contain"
+            className="w-48 md:w-64 lg:w-72 object-contain"
           />
-          <div className="text-xs md:text-lg lg:text-2xl text-left flex flex-col">
+          <div className="text-md md:text-lg lg:text-2xl text-left flex flex-col">
             <p>31 Agustus 2025</p>
             <p>ITB Ganesha</p>
             <Link
@@ -64,9 +60,10 @@ export default function Jumbotron() {
             </Link>
           </div>
         </div>
-      </div>
-      <div className="flex items-center z-30">
-        <Countdown />
+        
+        <div className="flex items-center justify-center">
+          <Countdown />
+        </div>
       </div>
     </div>
   );
