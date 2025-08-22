@@ -2,18 +2,12 @@
 
 import { useEffect } from "react";
 import { useEventsStore } from "@/utils/useEventsStore";
-import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import Acaras from "./components/Acaras";
 import HomeFooter from "./components/HomeFooter";
 
 export default function Home() {
-  const {
-    // images, events,
-    fetchEvents,
-    fetchImages,
-    fetchComments,
-  } = useEventsStore();
+  const { fetchEvents, fetchImages, fetchComments } = useEventsStore();
 
   useEffect(() => {
     fetchEvents();

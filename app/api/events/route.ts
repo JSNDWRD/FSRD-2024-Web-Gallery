@@ -6,7 +6,7 @@ export async function GET() {
     const data = await prisma.event.findMany({
       orderBy: [
         {
-          date: "desc",
+          date: "asc",
         },
       ],
     });

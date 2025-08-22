@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { useEventsStore } from "@/utils/useEventsStore";
+import { titleToSlug } from "@/utils/slugUtils";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -70,7 +71,7 @@ export default function Navbar() {
                   {events.slice(0, 5).map((event, i) => (
                     <Link
                       key={event.id}
-                      href={`/acara/${encodeURIComponent(event.title)}`}
+                      href={`/acara/${titleToSlug(event.title)}`}
                       className={`${
                         events.length <= 5 &&
                         i == events.length - 1 &&

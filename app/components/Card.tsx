@@ -1,6 +1,7 @@
 import { Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { titleToSlug } from "@/utils/slugUtils";
 
 export default function Card(props: {
   title: string;
@@ -9,6 +10,7 @@ export default function Card(props: {
   className?: string;
 }) {
   const { title, date, coverUrl, className } = props;
+
   return (
     <div className={`${className}`}>
       <p className="text-center mb-2 font-sans text-md md:text-xl">
@@ -26,7 +28,7 @@ export default function Card(props: {
           fill
           unoptimized
         />
-        <Link href={`/acara/${title}`} className="w-full ">
+        <Link href={`/acara/${titleToSlug(title)}`} className="w-full ">
           <div className="relative cursor-pointer font-playfair px-2 md:px-6 max-md:pb-6 lg:px-12 text-md lg:text-2xl flex justify-between items-end md:items-center text-[#FDFF78] z-10 h-24 bg-gradient-to-t from-[#002492] via-[rgba(0,36,146,0.83)] via-70% to-transparent rounded-b-2xl w-full">
             <h2 className="font-medium">{title}</h2>
             <Play fill="#FDFF78" className="size-4 md:size-6 lg:size-8" />

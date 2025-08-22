@@ -1,5 +1,6 @@
 "use client";
 import { useEventsStore } from "@/utils/useEventsStore";
+import { useEventSearch } from "@/utils/useEventSearch";
 import { useParams } from "next/navigation";
 import React, { useEffect } from "react";
 import acaraFlowerLeft from "@/public/acara_flower_left.png";
@@ -13,6 +14,7 @@ import commentPropsRight from "@/public/comment_props_right.png";
 import bugCenter from "@/public/bugs_center_2.png";
 import Image from "next/image";
 import Comment from "@/app/components/Comment";
+import NotFound from "@/app/components/NotFound";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -25,38 +27,84 @@ export default function Page() {
     });
   }, []);
 
-  const { namaAcara } = useParams();
+  const { slug } = useParams();
+  const slugString = slug?.toString() || "";
+
+  const { events, images, comments, fetchEvents, fetchImages, fetchComments } =
+    useEventsStore();
 
   const {
+    event,
     eventImages,
-    searchEvents,
     eventComments,
-    searchComments,
+    isLoading,
+    isSearching,
+    searchEvent,
+    isValidSlug,
+  } = useEventSearch(
     events,
-    fetchEvents,
-    loading,
-  } = useEventsStore();
+    images,
+    comments,
+    async (eventName: string) => {
+      console.log(`Searching images for event: ${eventName}`);
+    },
+    async (eventName: string) => {
+      console.log(`Searching comments for event: ${eventName}`);
+    }
+  );
 
   useEffect(() => {
     if (events.length === 0) {
       fetchEvents();
     }
-    searchEvents(namaAcara?.toString() || "");
-    searchComments(namaAcara?.toString() || "");
-  }, [searchEvents, searchComments, events.length, fetchEvents, namaAcara]);
+    if (images.length === 0) {
+      fetchImages();
+    }
+    if (comments.length === 0) {
+      fetchComments();
+    }
+  }, [
+    events.length,
+    images.length,
+    comments.length,
+    fetchEvents,
+    fetchImages,
+    fetchComments,
+  ]);
 
-  if (loading) {
-    return <div>Loading..</div>;
+  useEffect(() => {
+    if (slugString && events.length > 0) {
+      searchEvent(slugString);
+    }
+  }, [slugString, events.length, searchEvent]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002492] to-[#001a6b]">
+        <div className="text-center text-white">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FEECD4] mx-auto mb-4"></div>
+          <p className="text-xl text-[#FEECD4]">Memuat acara...</p>
+        </div>
+      </div>
+    );
   }
 
-  const validateEvent = events.some(
-    (e) => e.title.toLowerCase() == namaAcara?.toString().toLowerCase()
-  );
+  if (!isValidSlug) {
+    return <NotFound />;
+  }
 
-  const event = events.find((e) => e.title === namaAcara);
-
-  if (!validateEvent) {
-    return <div>404</div>;
+  if (isSearching) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002492] to-[#001a6b]">
+        <div className="text-center text-white">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#FEECD4] mx-auto mb-4"></div>
+          <p className="text-lg text-[#FEECD4]">Mencari acara...</p>
+        </div>
+      </div>
+    );
+  }
+  if (!event) {
+    return <NotFound />;
   }
 
   return (
@@ -89,18 +137,47 @@ export default function Page() {
         unselectable="on"
         data-aos="fade-left"
       />
-      <div className="py-64 z-30 relative min-h-[300vh]" data-aos="fade-up" data-aos-delay="1000">
+      <div
+        className="py-64 z-30 relative min-h-[300vh]"
+        data-aos="fade-up"
+        data-aos-delay="1000"
+      >
         <h1 className="mb-4 text-4xl md:text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
-          {namaAcara}
+          {event.title}
         </h1>
         <h2 className="mb-4 text-2xl md:text-5xl text-center font-playfair text-[#FEECD4]">
-          {new Date(event?.date || "").toLocaleDateString()}
+          {new Date(event.date).toLocaleDateString("id-ID", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
         </h2>
-        {eventImages.map((e) => (
-          <h2 key={e.key}>{e.link}</h2>
-        ))}
+        {eventImages.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24">
+            {eventImages.map((img) => (
+              <div
+                key={img.key}
+                className="relative aspect-square rounded-lg overflow-hidden"
+              >
+                <Image
+                  src={img.link}
+                  alt={`Event image ${img.key}`}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-[#FEECD4] text-lg opacity-75">
+            Belum ada gambar untuk acara ini
+          </p>
+        )}
       </div>
-      {/* Comment */}
+
+      {/* Comment Section */}
       <div className="bg-comment min-h-96 pt-24 relative">
         <Image
           src={commentPropsLeft}
@@ -137,16 +214,12 @@ export default function Page() {
             Komentar
           </h1>
           <div className="px-6 lg:px-24 mb-6 grid grid-cols-1 *:justify-self-center md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 w-fit mx-auto">
-            <Comment
-              eventName={event?.title || ""}
-              eventId={event?.id || ""}
-              type="POST"
-            />
+            <Comment eventName={event.title} eventId={event.id} type="POST" />
             {eventComments.map((comment, i) => (
               <Comment
-                eventName={event?.title || ""}
-                eventId={event?.id || ""}
-                key={i}
+                eventName={event.title}
+                eventId={event.id}
+                key={comment.id || i}
                 type="GET"
                 name={comment.name}
                 date={comment.createdAt}
@@ -154,7 +227,7 @@ export default function Page() {
               />
             ))}
           </div>
-          <footer className="text-center text-xl py-4">
+          <footer className="text-center text-xl py-4 text-[#FEECD4]">
             &copy; Antarasta FSRD ITB 2025. All rights reserved.
           </footer>
         </div>

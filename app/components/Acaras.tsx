@@ -37,7 +37,7 @@ export default function Acaras() {
   }, [events.length, fetchEvents]);
 
   return (
-    <div className="mt-32 h-screen">
+    <div className="mt-32 h-fit">
       <Image
         src={VinesRight}
         alt="vines"
@@ -46,7 +46,7 @@ export default function Acaras() {
         data-aos="fade-left"
         data-aos-duration="2000"
       />
-      <Image 
+      <Image
         className="absolute z-0 left-0 top-64 md:top-48 lg:top-64 w-32 md:w-48 xl:w-64 object-contain"
         src={LeftVines}
         alt="vines"
@@ -59,21 +59,33 @@ export default function Acaras() {
           src={LogoLokasharana}
           alt="Lokasharana"
           className="w-64 md:w-md lg:w-lg mx-auto"
-          data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="500"
         />
-        <p data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500" className="max-w-7xl w-[70%] text-center mx-auto mt-8 text-md md:text-xl xl:text-2xl font-sans">
-          Dari perjalanan panjang penuh harapan, kini saatnya kembali bersua 
-          dalam satu perayaan. Antarasta: Parade Wisuda Agustus 2025 FSRD ITB, 
-          menjadi ruang untuk merayakan pencapaian, seperti janji yang terwujud 
-          dalam pertemuan yang lama dinanti. Momen ini menjadi titik temu
-          untuk mengenang perjalanan, menumbuhkan rasa syukur, dan merayakan kebersamaan yang abadi.
+        <p
+          data-aos="fade-up"
+          data-aos-duration="2000"
+          data-aos-delay="500"
+          className="max-w-7xl w-[70%] text-center mx-auto mt-8 text-md md:text-xl xl:text-2xl font-sans"
+        >
+          Dari perjalanan panjang penuh harapan, kini saatnya kembali bersua
+          dalam satu perayaan. Antarasta: Parade Wisuda Agustus 2025 FSRD ITB,
+          menjadi ruang untuk merayakan pencapaian, seperti janji yang terwujud
+          dalam pertemuan yang lama dinanti. Momen ini menjadi titik temu untuk
+          mengenang perjalanan, menumbuhkan rasa syukur, dan merayakan
+          kebersamaan yang abadi.
         </p>
       </div>
 
       <div className="w-full mx-auto mb-12">
         {loading && (
-          <div className="mt-4 flex w-full gap-3 items-center h-fit text-xl justify-center mx-auto" data-aos="zoom-in" data-aos-duration="2000">
-            <Loader className="animate-spin w-12 h-12"/>
+          <div
+            className="mt-4 flex w-full gap-3 items-center h-fit text-xl justify-center mx-auto"
+            data-aos="zoom-in"
+            data-aos-duration="2000"
+          >
+            <Loader className="animate-spin w-12 h-12" />
             <p>Loading...</p>
           </div>
         )}
@@ -90,7 +102,7 @@ export default function Acaras() {
                   key={i}
                   title={e.title}
                   date={e.date}
-                  coverUrl={e.coverUrl || ""}
+                  coverUrl={e.coverUrl || "@/public/acara_flower_left.png"}
                   className={`${i % 2 != 0 && cols == 2 && "translate-y-8"}`}
                   data-aos="fade-up"
                 />

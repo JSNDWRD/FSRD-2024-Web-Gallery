@@ -19,7 +19,7 @@ export default function HomeFooter() {
           <p>@Sosmed 1</p>
           <p>@Sosmed 2</p>
         </div>
-        <p className="text-center text-xl"> 
+        <p className="text-center text-xl">
           &copy; Antarasta FSRD ITB 2025. All rights reserved.
         </p>
       </div>
