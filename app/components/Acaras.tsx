@@ -4,12 +4,13 @@ import { useEventsStore } from "@/utils/useEventsStore";
 import Image from "next/image";
 import React, { useEffect, useMemo } from "react";
 import VineSeparator from "./VineSeparator";
+import VinesRight from "@/public/vines_right.svg";
 import { Event } from "../api/dto";
 import { useBreakpointCols } from "./useBreakpointCols";
 import Card from "./Card";
 
 export default function Acaras() {
-  const { events, fetchEvents } = useEventsStore();
+  const { events, fetchEvents, loading } = useEventsStore();
   const cols = useBreakpointCols();
 
   const eventsPerRow = useMemo(() => {
@@ -28,16 +29,25 @@ export default function Acaras() {
 
   return (
     <div className="mt-32">
+      <Image
+        src={VinesRight}
+        alt="vines"
+        className="absolute z-0 top-80 right-0 w-32 md:w-48 lg:w-64 object-contain"
+        unselectable="on"
+      />
       <div className="px-4">
         <Image
           src={LogoLokasharana}
           alt="Lokasharana"
-          className="w-48 md:w-64 lg:w-lg mx-auto"
+          className="w-64 md:w-md lg:w-lg mx-auto"
         />
-        <p className="max-w-2xl text-center mx-auto mt-8 text-2xl font-sans">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          eveniet, non laudantium aperiam sed nisi dignissimos optio architecto
-          voluptatibus.
+        <p className="max-w-7xl w-[70%] text-center mx-auto mt-8 text-md md:text-xl xl:text-2xl font-sans">
+          Dari perjalanan panjang penuh harapan, kini saatnya kembali bersua 
+          dalam satu perayaan. Antarasta: Parade Wisuda Agustus 2025 FSRD ITB, 
+          menjadi ruang untuk merayakan pencapaian, seperti janji yang terwujud 
+          dalam pertemuan yang lama dinanti. Momen ini menjadi titik temu
+          untuk mengenang perjalanan, menumbuhkan rasa syukur, dan merayakan k
+          ebersamaan yang abadi.
         </p>
       </div>
 

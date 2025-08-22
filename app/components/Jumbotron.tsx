@@ -8,6 +8,8 @@ import flowPinkRight from "@/public/flowpink_right.png";
 import rockRight from "@/public/rock_right.png";
 import bugCenter from "@/public/bugs_center.png";
 import Link from "next/link";
+import Vines from "@/public/home_vines.svg"
+
 import { Play } from "lucide-react";
 
 export default function Jumbotron() {
@@ -17,6 +19,12 @@ export default function Jumbotron() {
         className="absolute z-0 -left-4 bottom-0 w-36 lg:w-64 object-contain"
         src={flowPinkLeft}
         alt="flow"
+        unselectable="on"
+      />
+      <Image 
+        className="absolute z-0 left-0 w-48 md:w-64 lg:w-64 object-contain"
+        src={Vines}
+        alt="vines"
         unselectable="on"
       />
       <Image
@@ -49,7 +57,7 @@ export default function Jumbotron() {
             <p>ITB Ganesha</p>
             <Link
               href="/"
-              className="flex flex-row items-center text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
+              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
             >
               Selengkapnya{" "}
               <Play className="size-4 md:size-6 stroke-0" fill="#002697" />

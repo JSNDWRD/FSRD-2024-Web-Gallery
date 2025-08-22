@@ -36,7 +36,7 @@ export default function Countdown() {
       <div className="flex gap-4">
         <div className="flex flex-col items-center">
           <span className="text-4xl md:text-6xl lg:text-8xl">{days}</span>
-          <span className="text-md md:text-lg mt-4">hari</span>
+          <span className="text-md md:text-xl mt-4">hari</span>
         </div>
         <div className="flex flex-col items-center">
           <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
@@ -45,7 +45,7 @@ export default function Countdown() {
           <span className="text-4xl md:text-6xl lg:text-8xl">
             {hours.toString().padStart(2, "0")}
           </span>
-          <span className="text-md md:text-lg mt-4">jam</span>
+          <span className="text-md md:text-xl mt-4">jam</span>
         </div>
         <div className="flex flex-col items-center">
           <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
@@ -54,7 +54,7 @@ export default function Countdown() {
           <span className="text-4xl md:text-6xl lg:text-8xl">
             {minutes.toString().padStart(2, "0")}
           </span>
-          <span className="text-md md:text-lg mt-4">menit</span>
+          <span className="text-md md:text-xl mt-4">menit</span>
         </div>
         <div className="flex flex-col items-center">
           <span className="text-4xl md:text-6xl lg:text-8xl">:</span>
@@ -63,7 +63,7 @@ export default function Countdown() {
           <span className="text-4xl md:text-6xl lg:text-8xl">
             {seconds.toString().padStart(2, "0")}
           </span>
-          <span className="text-md md:text-lg mt-4">detik</span>
+          <span className="text-md md:text-xl mt-4">detik</span>
         </div>
       </div>
     </div>
