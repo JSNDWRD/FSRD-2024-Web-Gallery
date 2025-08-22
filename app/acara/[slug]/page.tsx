@@ -108,7 +108,7 @@ export default function Page() {
   }
 
   return (
-    <section className="relative">
+    <section className="relative min-h-screen h-fit">
       <Image
         src={acaraFlowerLeft}
         className="absolute z-0 left-0 w-[640px] object-contain"
@@ -138,7 +138,7 @@ export default function Page() {
         data-aos="fade-left"
       />
       <div
-        className="py-64 z-30 relative min-h-[300vh]"
+        className="py-64 z-30 relative"
         data-aos="fade-up"
         data-aos-delay="1000"
       >
@@ -154,7 +154,7 @@ export default function Page() {
           })}
         </h2>
           {eventImages.length > 0 ? (
-            <div className="columns-1 sm:columns-2 md:columns-3 xl:columns-4 gap-4 [column-fill:_balance] px-4 md:px-6 lg:px-24">
+            <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4 md:px-6 lg:px-24">
               {eventImages.map((img) => (
                 <div
                   key={img.key}
@@ -178,7 +178,6 @@ export default function Page() {
           )}
       </div>
 
-      {/* Comment Section */}
       <div className="bg-comment min-h-96 pt-24 relative">
         <Image
           src={commentPropsLeft}
