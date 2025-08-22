@@ -153,28 +153,29 @@ export default function Page() {
             day: "numeric",
           })}
         </h2>
-        {eventImages.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24">
-            {eventImages.map((img) => (
-              <div
-                key={img.key}
-                className="relative aspect-square rounded-lg overflow-hidden"
-              >
-                <Image
-                  src={img.link}
-                  alt={`Event image ${img.key}`}
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-[#FEECD4] text-lg opacity-75">
-            Belum ada gambar untuk acara ini
-          </p>
-        )}
+          {eventImages.length > 0 ? (
+            <div className="columns-1 sm:columns-2 md:columns-3 xl:columns-4 gap-4 [column-fill:_balance] px-4 md:px-6 lg:px-24">
+              {eventImages.map((img) => (
+                <div
+                  key={img.key}
+                  className="mb-4 break-inside-avoid rounded-lg overflow-hidden"
+                >
+                  <Image
+                    src={img.link}
+                    alt={`Event image ${img.key}`}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-[#FEECD4] text-lg opacity-75">
+              Belum ada gambar untuk acara ini
+            </p>
+          )}
       </div>
 
       {/* Comment Section */}

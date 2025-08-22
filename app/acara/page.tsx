@@ -12,7 +12,7 @@ export default function Page() {
     }
   }, [events.length, fetchEvents]);
   return (
-    <div className="mt-32 min-h-screen">
+    <div className="mt-32">
       <h1 className="mb-6 text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
         Semua Acara
       </h1>
