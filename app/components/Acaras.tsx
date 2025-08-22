@@ -47,7 +47,7 @@ export default function Acaras() {
         data-aos-duration="2000"
       />
       <Image
-        className="absolute z-0 left-0 top-64 md:top-48 lg:top-64 w-32 md:w-48 xl:w-64 object-contain"
+        className="absolute z-0 left-0 top-72 md:top-56 lg:top-64 xl:top-48 w-24 md:w-40 xl:w-52 object-contain"
         src={LeftVines}
         alt="vines"
         unselectable="on"
