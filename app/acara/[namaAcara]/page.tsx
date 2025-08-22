@@ -13,8 +13,18 @@ import commentPropsRight from "@/public/comment_props_right.png";
 import bugCenter from "@/public/bugs_center_2.png";
 import Image from "next/image";
 import Comment from "@/app/components/Comment";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Page() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   const { namaAcara } = useParams();
 
   const {
@@ -56,26 +66,30 @@ export default function Page() {
         className="absolute z-0 left-0 w-[640px] object-contain"
         alt="flower"
         unselectable="on"
+        data-aos="fade-right"
       />
       <Image
         src={bugCenter2}
         className="absolute z-0 left-1/4 lg:left-1/2 lg:-translate-x-1/2 top-40 w-20 object-contain"
         alt="flower"
         unselectable="on"
+        data-aos="fade-up"
       />
       <Image
         src={acaraFlowerRight}
         className="absolute z-0 right-0 w-[540px] object-contain max-lg:hidden"
         alt="flower"
         unselectable="on"
+        data-aos="fade-left"
       />
       <Image
         src={acaraFlowerRight2}
         className="absolute z-0 right-0 w-24 lg:w-56 top-56 lg:top-48 object-contain"
         alt="flower"
         unselectable="on"
+        data-aos="fade-left"
       />
-      <div className="py-64 z-30 relative min-h-[300vh]">
+      <div className="py-64 z-30 relative min-h-[300vh]" data-aos="fade-up" data-aos-delay="1000">
         <h1 className="mb-4 text-4xl md:text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
           {namaAcara}
         </h1>
@@ -118,7 +132,7 @@ export default function Page() {
           alt="flower"
           unselectable="on"
         />
-        <div className="relative z-30">
+        <div className="relative z-30" data-aos="fade-left">
           <h1 className="mt-16 mb-32 text-4xl md:text-7xl font-semibold text-center font-playfair text-[#FEECD4]">
             Komentar
           </h1>

@@ -38,12 +38,14 @@ body {
 @media (min-width: 768px) {
   body {
     background-image: url("../public/background_desktop.png");
+    @apply bg-cover
   }
   .bg-navbar {
     background-image: url("../public/navbar_desktop.png");
   }
   .bg-jumbotron {
     background-image: url("../public/jumbotron_desktop.png");
+    @apply bg-cover
   }
   .bg-comment {
     background-image: url("../public/comment_desktop.png");

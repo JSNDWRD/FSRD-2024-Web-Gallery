@@ -8,14 +8,23 @@ import flowPinkRight from "@/public/flowpink_right.png";
 import rockRight from "@/public/rock_right.png";
 import bugCenter from "@/public/bugs_center.png";
 import Link from "next/link";
-import LeftVines from "@/public/home_vines.svg"
 
 import { Play } from "lucide-react";
+import { useEffect } from "react";
+import Aos from "aos";
+
 
 export default function Jumbotron() {
+  useEffect(() => {
+    Aos.init({
+      duration: 800,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <div className="bg-jumbotron relative pt-24 w-full flex flex-col xl:flex-row items-center justify-center gap-8 min-h-96 py-8 xl:py-32">
-      {/* Decorative Images */}
       <Image
         className="absolute z-0 -left-4 bottom-0 w-36 lg:w-64 object-contain"
         src={flowPinkLeft}
@@ -39,9 +48,11 @@ export default function Jumbotron() {
         src={bugCenter}
         alt="fly"
         unselectable="on"
+        data-aos="fade-up"
+        data-aos-delay="500"
       />
-      
-      <div className="flex flex-col mt-4 xl:flex-row flex-1 w-full items-center xl:justify-center z-30 gap-8 xl:gap-16 font-sans text-center xl:text-left">
+
+      <div className="flex flex-col mt-4 xl:flex-row flex-1 w-full items-center xl:justify-center z-30 gap-8 xl:gap-16 font-sans text-center xl:text-left" data-aos="fade-up">
         <div className="flex gap-4 md:gap-4 items-center justify-center">
           <Image
             src={LogoAntarasta}
