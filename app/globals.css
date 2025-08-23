@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-playfair: var(--font-playfair-display);
 }
 
 body {
   background: var(--background);
+  background-image: url("../public/background_mobile.png");
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-playfair);
+  @apply bg-no-repeat bg-cover bg-center;
+}
+
+.bg-navbar {
+  background-image: url("../public/navbar_mobile.png");
+  @apply bg-bottom-left bg-no-repeat bg-cover;
+}
+
+.bg-jumbotron {
+  background-image: url("../public/jumbotron_mobile.png");
+  @apply bg-bottom-left bg-no-repeat bg-cover;
+}
+
+.bg-comment {
+  background-image: url("../public/comment_mobile.png");
+  @apply bg-top-left bg-no-repeat bg-cover;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../public/background_desktop.png");
+    @apply bg-cover
+  }
+  .bg-navbar {
+    background-image: url("../public/navbar_desktop.png");
+  }
+  .bg-jumbotron {
+    background-image: url("../public/jumbotron_desktop.png");
+    @apply bg-cover
+  }
+  .bg-comment {
+    background-image: url("../public/comment_desktop.png");
+  }
 }
