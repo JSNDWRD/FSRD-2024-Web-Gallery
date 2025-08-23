@@ -2,7 +2,7 @@
 import { useEventsStore } from "@/utils/useEventsStore";
 import { useEventSearch } from "@/utils/useEventSearch";
 import { useParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import acaraFlowerLeft from "@/public/acara_flower_left.png";
 import acaraFlowerRight from "@/public/acara_flower_right.png";
 import acaraFlowerRight2 from "@/public/acara_flower_right_2.png";
@@ -15,11 +15,15 @@ import bugCenter from "@/public/bugs_center_2.png";
 import Image from "next/image";
 import Comment from "@/app/components/Comment";
 import NotFound from "@/app/components/NotFound";
+import ImageGalleryModal from "@/app/components/ImageGalleryModal";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { rangedEvents } from "@/lib/data";
 
 export default function Page() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -156,10 +160,14 @@ export default function Page() {
         </h2>
         {eventImages.length > 0 ? (
           <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-2 md:px-6 lg:px-24">
-            {eventImages.map((img) => (
+            {eventImages.map((img, index) => (
               <div
                 key={img.key}
-                className="mb-4 break-inside-avoid rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden"
+                className="mb-4 break-inside-avoid rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => {
+                  setCurrentImageIndex(index);
+                  setModalOpen(true);
+                }}
               >
                 <Image
                   src={img.link}
@@ -233,6 +241,15 @@ export default function Page() {
           </footer>
         </div>
       </div>
+
+      {/* Image Gallery Modal */}
+      <ImageGalleryModal
+        images={eventImages}
+        currentIndex={currentImageIndex}
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onNavigate={setCurrentImageIndex}
+      />
     </section>
   );
 }

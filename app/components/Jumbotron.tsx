@@ -66,7 +66,7 @@ export default function Jumbotron() {
             <p>ITB Ganesha</p>
             <Link
               href="/"
-              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-sm justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
+              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
             >
               Selengkapnya{" "}
               <Play className="size-3 md:size-4 stroke-0" fill="#002697" />
