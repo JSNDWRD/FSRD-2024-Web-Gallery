@@ -1,8 +1,8 @@
 import { Play } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { titleToSlug } from "@/utils/slugUtils";
 import { rangedEvents } from "@/lib/data";
+import Image from "next/image";
 
 export default function Card(props: {
   title: string;
@@ -13,7 +13,9 @@ export default function Card(props: {
   const { title, date, coverUrl, className } = props;
 
   return (
-    <div className={`${className}`}>
+    <div
+      className={`${className} hover:-translate-y-2 transition-all duration-500`}
+    >
       <p className="text-center mb-2 font-sans text-xs md:text-lg">
         {rangedEvents[title as keyof typeof rangedEvents] ||
           new Date(date).toLocaleDateString("id-ID", {
@@ -24,7 +26,7 @@ export default function Card(props: {
       </p>
       <Link
         href={`/acara/${titleToSlug(title)}`}
-        className="xl:w-96 lg:w-72 lg:h-64 md:w-48 cursor-pointer md:h-64 w-36  h-48 relative text-black flex items-end hover:-translate-y-2 transition-all duration-200"
+        className="xl:w-96 lg:w-72 lg:h-64 md:w-48 cursor-pointer md:h-64 w-36  h-48 relative text-black flex items-end"
       >
         <Image
           src={coverUrl}

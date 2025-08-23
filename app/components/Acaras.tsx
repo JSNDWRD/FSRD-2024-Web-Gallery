@@ -104,7 +104,7 @@ export default function Acaras() {
                   key={i}
                   title={e.title}
                   date={e.date}
-                  coverUrl={e.coverUrl || "@/public/acara_flower_left.png"}
+                  coverUrl={e.coverUrl || ""}
                   className={`${i % 2 != 0 && cols == 2 && "translate-y-8"}`}
                   data-aos="fade-up"
                 />

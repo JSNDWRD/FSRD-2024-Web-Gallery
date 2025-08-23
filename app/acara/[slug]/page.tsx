@@ -159,7 +159,7 @@ export default function Page() {
             {eventImages.map((img) => (
               <div
                 key={img.key}
-                className="mb-4 break-inside-avoid rounded-lg overflow-hidden"
+                className="mb-4 break-inside-avoid rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden"
               >
                 <Image
                   src={img.link}
