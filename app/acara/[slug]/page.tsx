@@ -109,7 +109,7 @@ export default function Page() {
   }
 
   return (
-    <section className="relative min-h-screen h-fit">
+    <section className="relative min-h-screen h-fit overflow-hidden">
       <Image
         src={acaraFlowerLeft}
         className="absolute z-0 left-0 w-[640px] object-contain"
@@ -154,29 +154,29 @@ export default function Page() {
               day: "numeric",
             })}
         </h2>
-          {eventImages.length > 0 ? (
-            <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-4 md:px-6 lg:px-24">
-              {eventImages.map((img) => (
-                <div
-                  key={img.key}
-                  className="mb-4 break-inside-avoid rounded-lg overflow-hidden"
-                >
-                  <Image
-                    src={img.link}
-                    alt={`Event image ${img.key}`}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover"
-                    unoptimized
-                  />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-center text-[#FEECD4] text-lg opacity-75">
-              Belum ada gambar untuk acara ini
-            </p>
-          )}
+        {eventImages.length > 0 ? (
+          <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-2 md:px-6 lg:px-24">
+            {eventImages.map((img) => (
+              <div
+                key={img.key}
+                className="mb-4 break-inside-avoid rounded-lg overflow-hidden"
+              >
+                <Image
+                  src={img.link}
+                  alt={`Event image ${img.key}`}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-[#FEECD4] text-lg opacity-75">
+            Belum ada gambar untuk acara ini
+          </p>
+        )}
       </div>
 
       <div className="bg-comment min-h-96 pt-24 relative">

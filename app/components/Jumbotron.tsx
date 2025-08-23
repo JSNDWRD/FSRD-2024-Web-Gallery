@@ -13,7 +13,6 @@ import { Play } from "lucide-react";
 import { useEffect } from "react";
 import Aos from "aos";
 
-
 export default function Jumbotron() {
   useEffect(() => {
     Aos.init({
@@ -52,26 +51,29 @@ export default function Jumbotron() {
         data-aos-delay="500"
       />
 
-      <div className="flex flex-col mt-4 xl:flex-row flex-1 w-full items-center xl:justify-center z-30 gap-8 xl:gap-16 font-sans text-center xl:text-left" data-aos="fade-up">
+      <div
+        className="flex flex-col mt-4 xl:flex-row flex-1 w-full items-center xl:justify-center z-30 gap-8 xl:gap-16 font-sans text-center xl:text-left"
+        data-aos="fade-up"
+      >
         <div className="flex gap-4 md:gap-4 items-center justify-center">
           <Image
             src={LogoAntarasta}
             alt="Antarasta"
-            className="w-48 md:w-64 lg:w-72 object-contain"
+            className="w-36 md:w-64 lg:w-72 object-contain"
           />
-          <div className="text-md md:text-lg lg:text-2xl text-left flex flex-col">
+          <div className="text-sm md:text-lg lg:text-2xl text-left flex flex-col">
             <p>31 Agustus 2025</p>
             <p>ITB Ganesha</p>
             <Link
               href="/"
-              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
+              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-sm justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
             >
               Selengkapnya{" "}
-              <Play className="size-4 md:size-6 stroke-0" fill="#002697" />
+              <Play className="size-3 md:size-4 stroke-0" fill="#002697" />
             </Link>
           </div>
         </div>
-        
+
         <div className="flex items-center justify-center">
           <Countdown />
         </div>

@@ -14,7 +14,7 @@ export default function Card(props: {
 
   return (
     <div className={`${className}`}>
-      <p className="text-center mb-2 font-sans text-md md:text-xl">
+      <p className="text-center mb-2 font-sans text-xs md:text-lg">
         {rangedEvents[title as keyof typeof rangedEvents] ||
           new Date(date).toLocaleDateString("id-ID", {
             year: "numeric",

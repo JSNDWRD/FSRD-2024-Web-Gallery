@@ -17,7 +17,7 @@ export default function Page() {
         Semua Acara
       </h1>
       {events.length === 0 && <p>No Events</p>}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24 mx-auto *:justify-self-center mb-16">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 px-4 md:px-6 lg:px-24 mx-auto *:justify-self-center mb-48 relative z-30">
         {events.map((e, i) => (
           <Card
             key={i}
