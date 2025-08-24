@@ -4,9 +4,7 @@ import footerDesktop from "@/public/footer_desktop.png";
 import footerPropsLeft from "@/public/footer_props_left.png";
 import footerPropsRight from "@/public/footer_props_right.png";
 import Link from "next/link";
-import { Instagram, LucideTwitter, TwitterIcon, X } from "lucide-react";
 import { FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
-
 
 export default function HomeFooter() {
   return (
@@ -34,9 +32,24 @@ export default function HomeFooter() {
       />
       <div className="relative z-30 flex flex-col justify-between items-center p-6 gap-8 h-full w-full">
         <div className="flex flex-col lg:flex-row justify-center gap-4 items-center font-bold">
-          <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaInstagram size={20} /> @fsrditb24</Link>
-          <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaXTwitter size={20} /> @FSRDITB24</Link>
-          <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaTiktok size={20} /> @fsrditb24</Link>
+          <Link
+            href="https://www.instagram.com/fsrditb24/"
+            className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <FaInstagram size={20} /> @fsrditb24
+          </Link>
+          <Link
+            href="https://www.x.com/fsrditb24/"
+            className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <FaXTwitter size={20} /> @FSRDITB24
+          </Link>
+          <Link
+            href="https://www.tiktok.com/@fsrditb2024"
+            className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <FaTiktok size={20} /> @fsrditb24
+          </Link>
         </div>
         <p className="text-center text-xl">
           &copy; Antarasta FSRD ITB 2025. All rights reserved.
