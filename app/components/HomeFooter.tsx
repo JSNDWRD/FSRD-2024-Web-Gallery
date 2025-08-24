@@ -1,8 +1,8 @@
 import Image from "next/image";
-import footerMobile from "@/public/footer_mobile.png";
-import footerDesktop from "@/public/footer_desktop.png";
-import footerPropsLeft from "@/public/footer_props_left.png";
-import footerPropsRight from "@/public/footer_props_right.png";
+import footerMobile from "@/public/footer_mobile.webp";
+import footerDesktop from "@/public/footer_desktop.webp";
+import footerPropsLeft from "@/public/footer_props_left.webp";
+import footerPropsRight from "@/public/footer_props_right.webp";
 import Link from "next/link";
 import { FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
 

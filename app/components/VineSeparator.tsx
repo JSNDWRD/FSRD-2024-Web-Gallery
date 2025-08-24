@@ -1,6 +1,6 @@
 import Image from "next/image";
-import SeparatorDesktop from "@/public/separator_desktop.png";
-import SeparatorMobile from "@/public/separator_mobile.png";
+import SeparatorDesktop from "@/public/separator_desktop.webp";
+import SeparatorMobile from "@/public/separator_mobile.webp";
 
 export default function VineSeparator() {
   return (
