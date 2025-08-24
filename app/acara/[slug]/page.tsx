@@ -3,15 +3,15 @@ import { useEventsStore } from "@/utils/useEventsStore";
 import { useEventSearch } from "@/utils/useEventSearch";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import acaraFlowerLeft from "@/public/acara_flower_left.png";
-import acaraFlowerRight from "@/public/acara_flower_right.png";
-import acaraFlowerRight2 from "@/public/acara_flower_right_2.png";
-import bugCenter2 from "@/public/bugs_center_2.png";
-import flowLeft from "@/public/flowcomment_left.png";
-import flowRight from "@/public/flowcomment_right.png";
-import commentPropsLeft from "@/public/comment_props_left.png";
-import commentPropsRight from "@/public/comment_props_right.png";
-import bugCenter from "@/public/bugs_center_2.png";
+import acaraFlowerLeft from "@/public/acara_flower_left.webp";
+import acaraFlowerRight from "@/public/acara_flower_right.webp";
+import acaraFlowerRight2 from "@/public/acara_flower_right_2.webp";
+import bugCenter2 from "@/public/bugs_center_2.webp";
+import flowLeft from "@/public/flowcomment_left.webp";
+import flowRight from "@/public/flowcomment_right.webp";
+import commentPropsLeft from "@/public/comment_props_left.webp";
+import commentPropsRight from "@/public/comment_props_right.webp";
+import bugCenter from "@/public/bugs_center_2.webp";
 import Image from "next/image";
 import Comment from "@/app/components/Comment";
 import NotFound from "@/app/components/NotFound";
@@ -241,9 +241,24 @@ export default function Page() {
           <footer className="w-full h-fit py-10">
             <div className="relative z-30 flex flex-col justify-between items-center p-6 gap-8 lg:gap-3  h-full w-full">
               <div className="flex flex-col lg:flex-row justify-center gap-4 items-center font-bold">
-                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaInstagram size={20} /> @fsrditb24</Link>
-                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaXTwitter size={20} /> @FSRDITB24</Link>
-                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaTiktok size={20} /> @fsrditb24</Link>
+                <Link
+                  href="https://www.instagram.com/fsrditb24/"
+                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <FaInstagram size={20} /> @fsrditb24
+                </Link>
+                <Link
+                  href="https://www.instagram.com/fsrditb24/"
+                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <FaXTwitter size={20} /> @FSRDITB24
+                </Link>
+                <Link
+                  href="https://www.instagram.com/fsrditb24/"
+                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                >
+                  <FaTiktok size={20} /> @fsrditb24
+                </Link>
               </div>
               <p className="text-center text-xl">
                 &copy; Antarasta FSRD ITB 2025. All rights reserved.

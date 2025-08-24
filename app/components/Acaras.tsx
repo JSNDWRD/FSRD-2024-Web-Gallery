@@ -1,16 +1,16 @@
 "use client";
-import LogoLokasharana from "@/public/logo_lokasharana.png";
+import LogoLokasharana from "@/public/logo_lokasharana.webp";
 import { useEventsStore } from "@/utils/useEventsStore";
 import Image from "next/image";
 import React, { useEffect, useMemo } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import VineSeparator from "./VineSeparator";
-import VinesRight from "@/public/vines_right.svg";
+import VinesRight from "@/public/vines_right.webp";
 import { Event } from "../api/dto";
 import { useBreakpointCols } from "./useBreakpointCols";
 import Card from "./Card";
-import LeftVines from "@/public/home_vines.svg";
+import LeftVines from "@/public/home_vines.webp";
 import { Loader } from "lucide-react";
 
 export default function Acaras() {

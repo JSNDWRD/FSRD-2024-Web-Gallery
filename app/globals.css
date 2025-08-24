@@ -14,40 +14,40 @@
 
 body {
   background: var(--background);
-  background-image: url("../public/background_mobile.png");
+  background-image: url("../public/background_mobile.webp");
   color: var(--foreground);
   font-family: var(--font-playfair);
   @apply bg-no-repeat bg-cover bg-center;
 }
 
 .bg-navbar {
-  background-image: url("../public/navbar_mobile.png");
+  background-image: url("../public/navbar_mobile.webp");
   @apply bg-bottom-left bg-no-repeat bg-cover;
 }
 
 .bg-jumbotron {
-  background-image: url("../public/jumbotron_mobile.png");
+  background-image: url("../public/jumbotron_mobile.webp");
   @apply bg-bottom-left bg-no-repeat bg-cover;
 }
 
 .bg-comment {
-  background-image: url("../public/comment_mobile.png");
+  background-image: url("../public/comment_mobile.webp");
   @apply bg-top-left bg-no-repeat bg-cover;
 }
 
 @media (min-width: 768px) {
   body {
-    background-image: url("../public/background_desktop.png");
-    @apply bg-cover
+    background-image: url("../public/background_desktop.webp");
+    @apply bg-cover;
   }
   .bg-navbar {
-    background-image: url("../public/navbar_desktop.png");
+    background-image: url("../public/navbar_desktop.webp");
   }
   .bg-jumbotron {
-    background-image: url("../public/jumbotron_desktop.png");
-    @apply bg-cover
+    background-image: url("../public/jumbotron_desktop.webp");
+    @apply bg-cover;
   }
   .bg-comment {
-    background-image: url("../public/comment_desktop.png");
+    background-image: url("../public/comment_desktop.webp");
   }
 }

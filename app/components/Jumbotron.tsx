@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Countdown from "./Countdown";
-import LogoAntarasta from "@/public/logo_antarasta.png";
-import flowPinkLeft from "@/public/flowpink_left.png";
-import flowPinkRight from "@/public/flowpink_right.png";
-import rockRight from "@/public/rock_right.png";
-import bugCenter from "@/public/bugs_center.png";
+import LogoAntarasta from "@/public/logo_antarasta.webp";
+import flowPinkLeft from "@/public/flowpink_left.webp";
+import flowPinkRight from "@/public/flowpink_right.webp";
+import rockRight from "@/public/rock_right.webp";
+import bugCenter from "@/public/bugs_center.webp";
 import Link from "next/link";
 
 import { Play } from "lucide-react";

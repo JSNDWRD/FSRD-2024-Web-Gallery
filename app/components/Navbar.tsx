@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import navbarFlower from "@/public/navbar_flower.png";
+import navbarFlower from "@/public/navbar_flower.webp";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
