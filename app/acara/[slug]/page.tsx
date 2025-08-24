@@ -19,6 +19,8 @@ import ImageGalleryModal from "@/app/components/ImageGalleryModal";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { rangedEvents } from "@/lib/data";
+import { FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -236,8 +238,17 @@ export default function Page() {
               />
             ))}
           </div>
-          <footer className="text-center text-xl py-4 text-[#FEECD4]">
-            &copy; Antarasta FSRD ITB 2025. All rights reserved.
+          <footer className="w-full h-fit py-10">
+            <div className="relative z-30 flex flex-col justify-between items-center p-6 gap-8 lg:gap-3  h-full w-full">
+              <div className="flex flex-col lg:flex-row justify-center gap-4 items-center font-bold">
+                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaInstagram size={20} /> @fsrditb24</Link>
+                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaXTwitter size={20} /> @FSRDITB24</Link>
+                <Link href="https://www.instagram.com/fsrditb24/" className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"><FaTiktok size={20} /> @fsrditb24</Link>
+              </div>
+              <p className="text-center text-xl">
+                &copy; Antarasta FSRD ITB 2025. All rights reserved.
+              </p>
+            </div>
           </footer>
         </div>
       </div>
