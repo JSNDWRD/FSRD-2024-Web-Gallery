@@ -11,7 +11,7 @@ import { Event } from "../api/dto";
 import { useBreakpointCols } from "./useBreakpointCols";
 import Card from "./Card";
 import LeftVines from "@/public/home_vines.webp";
-import { Loader } from "lucide-react";
+import { LoaderCircle } from "lucide-react";
 
 export default function Acaras() {
   const { events, fetchEvents, loading } = useEventsStore();
@@ -85,7 +85,7 @@ export default function Acaras() {
             data-aos="zoom-in"
             data-aos-duration="2000"
           >
-            <Loader className="animate-spin w-12 h-12" />
+            <LoaderCircle className="animate-spin w-12 h-12" />
             <p>Loading...</p>
           </div>
         )}
@@ -100,14 +100,14 @@ export default function Acaras() {
               className={`flex items-center justify-center relative z-30 gap-4 lg:gap-8`}
             >
               {row.map((e, i) => (
-                <Card
-                  key={i}
-                  title={e.title}
-                  date={e.date}
-                  coverUrl={e.coverUrl || ""}
-                  className={`${i % 2 != 0 && cols == 2 && "translate-y-8"}`}
-                  data-aos="fade-up"
-                />
+                <span key={i} data-aos="fade-up" data-aos-delay={50 * (i + 1)}>
+                  <Card
+                    title={e.title}
+                    date={e.date}
+                    coverUrl={e.coverUrl || ""}
+                    className={`${i % 2 != 0 && cols == 2 && "translate-y-8"}`}
+                  />
+                </span>
               ))}
             </div>
           </React.Fragment>
