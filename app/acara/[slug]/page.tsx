@@ -21,6 +21,7 @@ import "aos/dist/aos.css";
 import { rangedEvents } from "@/lib/data";
 import { FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import { LoaderCircle } from "lucide-react";
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -87,10 +88,14 @@ export default function Page() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002492] to-[#001a6b]">
+      <div className="min-h-screen flex items-center justify-center bg-default">
         <div className="text-center text-white">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FEECD4] mx-auto mb-4"></div>
-          <p className="text-xl text-[#FEECD4]">Memuat acara...</p>
+          <div className="mx-auto mb-4">
+            <LoaderCircle className="size-20 md:size-24 lg:size-36 animate-spin mx-auto" />
+          </div>
+          <p className="text-md md:text-lg lg:text-xl text-white">
+            Memuat acara...
+          </p>
         </div>
       </div>
     );
@@ -102,14 +107,19 @@ export default function Page() {
 
   if (isSearching) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#002492] to-[#001a6b]">
+      <div className="min-h-screen flex items-center justify-center bg-default">
         <div className="text-center text-white">
-          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#FEECD4] mx-auto mb-4"></div>
-          <p className="text-lg text-[#FEECD4]">Mencari acara...</p>
+          <div className="mx-auto mb-4">
+            <LoaderCircle className="size-20 md:size-24 lg:size-36 animate-spin mx-auto" />
+          </div>
+          <p className="text-md md:text-lg lg:text-xl text-white">
+            Mencari acara...
+          </p>
         </div>
       </div>
     );
   }
+
   if (!event) {
     return <NotFound />;
   }
