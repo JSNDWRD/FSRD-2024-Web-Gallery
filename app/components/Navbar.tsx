@@ -35,7 +35,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="flex items-center bg-navbar min-h-14 md:min-h-24 absolute top-0 w-full font-playfair z-[100]">
+    <nav className="flex items-center bg-navbar min-h-14 md:min-h-24 fixed top-0 w-full font-playfair z-[100]">
       <ul className="inline-flex -mt-4 gap-6 md:gap-10 text-[#002492] ml-14 md:ml-32 lg:ml-40 text-lg md:text-2xl lg:text-3xl font-semibold">
         <li>
           <Link href={"/"} className="hover:text-blue-700">

@@ -23,7 +23,7 @@ export default function Jumbotron() {
   }, []);
 
   return (
-    <div className="bg-jumbotron relative pt-24 w-full flex flex-col xl:flex-row items-center justify-center gap-8 min-h-96 py-8 xl:py-32">
+    <div className="bg-jumbotron relative pt-24 w-full flex flex-col xl:flex-row items-center justify-center gap-8 py-8 xl:py-32">
       <Image
         className="absolute z-0 -left-4 bottom-0 w-36 lg:w-64 object-contain"
         src={flowPinkLeft}
