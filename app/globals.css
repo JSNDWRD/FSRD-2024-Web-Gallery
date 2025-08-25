@@ -14,9 +14,13 @@
 
 body {
   background: var(--background);
-  background-image: url("../public/background_mobile.webp");
   color: var(--foreground);
   font-family: var(--font-playfair);
+}
+
+body,
+.bg-default {
+  background-image: url("../public/background_mobile.webp");
   @apply bg-no-repeat bg-cover bg-center;
 }
 
@@ -36,7 +40,8 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
+  body,
+  .bg-default {
     background-image: url("../public/background_desktop.webp");
     @apply bg-cover;
   }
