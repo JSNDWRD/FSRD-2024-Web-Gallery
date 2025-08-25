@@ -85,7 +85,14 @@ export default function ImageGalleryModal({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, handleNext, handlePrevious, handleZoomIn, handleZoomOut, onClose]);
+  }, [
+    isOpen,
+    handleNext,
+    handlePrevious,
+    handleZoomIn,
+    handleZoomOut,
+    onClose,
+  ]);
 
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
@@ -99,10 +106,10 @@ export default function ImageGalleryModal({
   if (!isOpen || !images[currentIndex]) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center">
+    <div className="fixed inset-0 z-[200] bg-black/80 flex items-center justify-center">
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+        className="absolute cursor-pointer top-4 right-4 z-50 p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
         aria-label="Close gallery"
       >
         <X className="w-6 h-6 text-black" />
@@ -115,21 +122,21 @@ export default function ImageGalleryModal({
       <div className="absolute bottom-4 right-4 z-50 flex gap-2">
         <button
           onClick={handleZoomOut}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+          className="p-2 bg-white cursor-pointer bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
           aria-label="Zoom out"
         >
           <ZoomOut className="w-5 h-5 text-black" />
         </button>
         <button
           onClick={handleZoomIn}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+          className="p-2 bg-white cursor-pointer bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
           aria-label="Zoom in"
         >
           <ZoomIn className="w-5 h-5 text-black" />
         </button>
         <button
           onClick={resetZoom}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all text-black text-sm px-3"
+          className="p-2 bg-white cursor-pointer bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all text-black text-sm px-3"
         >
           Reset
         </button>
@@ -139,14 +146,14 @@ export default function ImageGalleryModal({
         <>
           <button
             onClick={handlePrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+            className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
             aria-label="Previous image"
           >
             <ChevronLeft className="w-6 h-6 text-black" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+            className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
             aria-label="Next image"
           >
             <ChevronRight className="w-6 h-6 text-black" />
@@ -163,14 +170,14 @@ export default function ImageGalleryModal({
             transform: `scale(${scale})`,
             transition: "transform 0.2s ease-out",
           }}
-          className="max-w-[90vw] max-h-[90vh]"
+          className="max-w-[90vw] h-[90vh] flex items-center justify-center"
         >
           <Image
             src={images[currentIndex].link}
             alt={`Gallery image ${currentIndex + 1}`}
             width={1200}
             height={800}
-            className="max-w-full max-h-full object-contain"
+            className="w-auto max-h-[calc(100vh-16rem)] object-contain"
             unoptimized
             priority
           />
