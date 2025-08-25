@@ -267,7 +267,7 @@ export default function Page() {
                   href="https://www.instagram.com/fsrditb24/"
                   className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <FaTiktok size={20} /> @fsrditb24
+                  <FaTiktok size={20} /> @fsrditb2024
                 </Link>
               </div>
               <p className="text-center text-xl">
