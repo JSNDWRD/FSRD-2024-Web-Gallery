@@ -17,7 +17,7 @@ export default function Navbar() {
     fetchEvents();
   }, [fetchEvents]);
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside frfr
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
