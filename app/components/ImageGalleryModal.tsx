@@ -122,7 +122,7 @@ export default function ImageGalleryModal({
       <div className="absolute bottom-4 right-4 z-50 flex gap-2">
         <button
           onClick={handleZoomOut}
-          className="p-2 bg-white cursor-pointer bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+          className="p-2 bg-white cursor-pointer bg-opacity-20 hover:bg-opacity-30 rounded-full transition-zall"
           aria-label="Zoom out"
         >
           <ZoomOut className="w-5 h-5 text-black" />
@@ -204,7 +204,7 @@ export default function ImageGalleryModal({
                 alt={`Thumbnail ${index + 1}`}
                 width={48}
                 height={48}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
                 unoptimized
               />
             </button>

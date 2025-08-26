@@ -14,7 +14,7 @@ export default function Card(props: {
 
   return (
     <div
-      className={`${className} hover:-translate-y-2 transition-all duration-500`}
+      className={`${className} hover:-translate-y-2 transition-all duration-500 shadow-lg`}
     >
       <p className="text-center mb-2 font-sans text-xs md:text-lg">
         {rangedEvents[title as keyof typeof rangedEvents] ||

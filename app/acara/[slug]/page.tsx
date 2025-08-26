@@ -249,31 +249,31 @@ export default function Page() {
             ))}
           </div>
           <footer className="w-full h-fit py-10">
-            <div className="relative z-30 flex flex-col justify-between items-center p-6 gap-8 lg:gap-3  h-full w-full">
-              <div className="flex flex-col lg:flex-row justify-center gap-4 items-center font-bold">
+            <div className="relative mt-6 z-30 flex flex-col justify-between items-center p-6 gap-8 h-full w-full">
+              <div className="flex flex-col xl:flex-row justify-center gap-4 items-center font-bold">
                 <Link
                   href="https://www.instagram.com/fsrditb24/"
-                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                  className="md:text-lg flex items-center gap-3 bg-white bg-opacity-90 text-black px-6 py-1 rounded-full hover:-translate-y-0.5 hover:bg-opacity-100 transition-all duration-200 shadow-lg"
                 >
                   <FaInstagram size={20} /> @fsrditb24
                 </Link>
                 <Link
-                  href="https://www.instagram.com/fsrditb24/"
-                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                  href="https://www.x.com/fsrditb24/"
+                  className="md:text-lg flex items-center gap-3 bg-white bg-opacity-90 text-black px-6 py-1 rounded-full hover:-translate-y-0.5 hover:bg-opacity-100 transition-all duration-200 shadow-lg"
                 >
                   <FaXTwitter size={20} /> @FSRDITB24
                 </Link>
                 <Link
-                  href="https://www.instagram.com/fsrditb24/"
-                  className="text-lg flex items-center gap-3 hover:-translate-y-0.5 transition-all duration-200"
+                  href="https://www.tiktok.com/@fsrditb2024"
+                  className="md:text-lg flex items-center gap-3 bg-white bg-opacity-90 text-black px-6 py-1 rounded-full hover:-translate-y-0.5 hover:bg-opacity-100 transition-all duration-200 shadow-lg"
                 >
-                  <FaTiktok size={20} /> @fsrditb2024
+                  <FaTiktok size={20} /> @fsrditb24
                 </Link>
               </div>
-              <p className="text-center text-xl">
+              <p className="text-center text-md md:text-xl font-bold">
                 &copy; Antarasta FSRD ITB 2025. All rights reserved.
               </p>
-            </div>
+          </div>
           </footer>
         </div>
       </div>
