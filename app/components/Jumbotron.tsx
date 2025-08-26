@@ -25,13 +25,13 @@ export default function Jumbotron() {
   return (
     <div className="bg-jumbotron relative pt-24 w-full flex flex-col xl:flex-row items-center justify-center gap-8 py-8 xl:py-32">
       <Image
-        className="absolute z-0 -left-4 bottom-0 w-36 lg:w-64 object-contain"
+        className="absolute z-0 -left-4 bottom-0 w-20 md:w-36 lg:w-64 object-contain"
         src={flowPinkLeft}
         alt="flow"
         unselectable="on"
       />
       <Image
-        className="absolute z-0 right-0 -top-8 w-48 md:w-64 lg:w-96 object-contain"
+        className="absolute z-0 right-0 -top-8 w-48 md:w-64 lg:w-72 xl:w-96 object-contain"
         src={flowPinkRight}
         alt="flow"
         unselectable="on"
@@ -43,7 +43,7 @@ export default function Jumbotron() {
         unselectable="on"
       />
       <Image
-        className="absolute z-0 max-lg:left-1/2 max-lg:-translate-x-1/2 left-1/4 -bottom-24 w-48 object-contain"
+        className="absolute z-0 max-lg:left-1/2 max-lg:-translate-x-1/2 left-1/4 -bottom-12 w-24 md:-bottom-16 md:w-32 lg:m-bottom-24 xp:w-38 object-contain"
         src={bugCenter}
         alt="fly"
         unselectable="on"
@@ -59,14 +59,14 @@ export default function Jumbotron() {
           <Image
             src={LogoAntarasta}
             alt="Antarasta"
-            className="w-36 md:w-64 lg:w-72 object-contain"
+            className="w-36 sm:w-48 md:w-64 lg:w-72 object-contain"
           />
           <div className="text-sm md:text-lg lg:text-2xl text-left flex flex-col">
             <p>31 Agustus 2025</p>
             <p>ITB Ganesha</p>
             <Link
               href="/"
-              className="flex flex-row items-center hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
+              className="flex flex-row items-center shadow-lg hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
             >
               Selengkapnya{" "}
               <Play className="size-3 md:size-4 stroke-0" fill="#002697" />

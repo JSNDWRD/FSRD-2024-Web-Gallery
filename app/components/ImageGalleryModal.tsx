@@ -102,7 +102,7 @@ export default function ImageGalleryModal({
     <div className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center">
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 z-50 p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+        className="absolute top-4 cursor-pointer hover:scale-105 duration-100 right-4 z-50 p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
         aria-label="Close gallery"
       >
         <X className="w-6 h-6 text-black" />
@@ -115,21 +115,21 @@ export default function ImageGalleryModal({
       <div className="absolute bottom-4 right-4 z-50 flex gap-2">
         <button
           onClick={handleZoomOut}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+          className="p-2 bg-white cursor-pointer hover:scale-105 duration-100 bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
           aria-label="Zoom out"
         >
           <ZoomOut className="w-5 h-5 text-black" />
         </button>
         <button
           onClick={handleZoomIn}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+          className="p-2 bg-white cursor-pointer hover:scale-105 duration-100 bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
           aria-label="Zoom in"
         >
           <ZoomIn className="w-5 h-5 text-black" />
         </button>
         <button
           onClick={resetZoom}
-          className="p-2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all text-black text-sm px-3"
+          className="p-2 bg-white cursor-pointer hover:scale-105 duration-100 bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all text-black text-sm px-3"
         >
           Reset
         </button>
@@ -139,14 +139,14 @@ export default function ImageGalleryModal({
         <>
           <button
             onClick={handlePrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+            className="absolute left-4 hover:scale-105 transition-all duration-100 top-1/2 cursor-pointer -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full"
             aria-label="Previous image"
           >
             <ChevronLeft className="w-6 h-6 text-black" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
+            className="absolute right-4 hover:scale-105 top-1/2 cursor-pointer -translate-y-1/2 z-50 p-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all"
             aria-label="Next image"
           >
             <ChevronRight className="w-6 h-6 text-black" />
@@ -163,14 +163,18 @@ export default function ImageGalleryModal({
             transform: `scale(${scale})`,
             transition: "transform 0.2s ease-out",
           }}
-          className="max-w-[90vw] max-h-[90vh]"
+          className="flex items-center justify-center w-full h-full"
         >
           <Image
             src={images[currentIndex].link}
             alt={`Gallery image ${currentIndex + 1}`}
             width={1200}
             height={800}
-            className="max-w-full max-h-full object-contain"
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+            style={{
+              width: "auto",
+              height: "auto",
+            }}
             unoptimized
             priority
           />
@@ -197,7 +201,7 @@ export default function ImageGalleryModal({
                 alt={`Thumbnail ${index + 1}`}
                 width={48}
                 height={48}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover cursor-pointer"
                 unoptimized
               />
             </button>
