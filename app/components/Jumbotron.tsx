@@ -65,7 +65,7 @@ export default function Jumbotron() {
             <p>31 Agustus 2025</p>
             <p>ITB Ganesha</p>
             <Link
-              href="/"
+              href="https://www.instagram.com/p/DNvQETH0ivg/"
               className="flex flex-row items-center shadow-lg hover:scale-105 transition-all delay-75 text-md justify-between gap-2 md:gap-4 px-2 py-1 md:px-4 rounded-lg md:rounded-2xl bg-white text-[#002697] mt-4 text-center"
             >
               Selengkapnya{" "}
