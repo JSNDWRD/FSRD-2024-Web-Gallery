@@ -273,7 +273,7 @@ export default function Page() {
               <p className="text-center text-md md:text-xl font-bold">
                 &copy; Antarasta FSRD ITB 2025. All rights reserved.
               </p>
-          </div>
+            </div>
           </footer>
         </div>
       </div>

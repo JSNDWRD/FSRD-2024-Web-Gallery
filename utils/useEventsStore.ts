@@ -57,7 +57,8 @@ export const useEventsStore = create<EventsState>((set, get) => ({
   fetchImages: async () => {
     set({ loading: true });
     try {
-      const res = await fetch("/api/r2-storage");
+      // const res = await fetch("/api/r2-storage");
+      const res = await fetch("/api/cloudinary");
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }

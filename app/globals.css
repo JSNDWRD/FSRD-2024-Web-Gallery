@@ -16,6 +16,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-playfair);
+  @apply overflow-x-hidden;
 }
 
 body,

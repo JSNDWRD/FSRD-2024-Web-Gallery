@@ -36,7 +36,7 @@ export function useEventSearch(
   const eventImages = useMemo(() => {
     if (!event || images.length === 0) return [];
     return images.filter((img) =>
-      img.key?.toLowerCase().startsWith(`${event.title.toLowerCase()}/`)
+      img.eventName?.toLowerCase().startsWith(`${event.title.toLowerCase()}`)
     );
   }, [event, images]);
 
@@ -50,7 +50,6 @@ export function useEventSearch(
   const searchEvent = useCallback(
     async (slug: string) => {
       if (!slug || slug === currentSlug) return;
-
       setCurrentSlug(slug);
       setIsSearching(true);
 
